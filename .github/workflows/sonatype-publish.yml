@@ -18,10 +18,10 @@ jobs:
           distribution: 'adopt'
           java-version: 21
           server-id: central
-          server-username: ${{ secrets.NEXUS_USERNAME }}
-          server-password: ${{ secrets.NEXUS_PASSWORD }}
-          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
-          gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          server-username: ${{ secrets.secrets.NEXUS_USERNAME }}
+          server-password: ${{ secrets.secrets.NEXUS_PASSWORD }}
+          gpg-private-key: ${{ secrets.secrets.GPG_PRIVATE_KEY }}
+          gpg-passphrase: ${{ secrets.secrets.GPG_PASSPHRASE }}
 
       - name: Print configured keys
         run: |
@@ -30,10 +30,10 @@ jobs:
           echo -n $GPG_PRIVATE_KEY
           echo -n $GPG_PASSPHRASE
         env:
-          MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
-          NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
-          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+          MAVEN_USERNAME: ${{ secrets.secrets.NEXUS_USERNAME }}
+          NEXUS_PASSWORD: ${{ secrets.secrets.NEXUS_PASSWORD }}
+          GPG_PRIVATE_KEY: ${{ secrets.secrets.GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.secrets.GPG_PASSPHRASE }}
 
       - name: Configure GPG Key
         run: |
