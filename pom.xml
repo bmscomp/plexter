@@ -78,7 +78,7 @@
 
     <profiles>
         <profile>
-            <!-- required, used in .github/workflows/sonatype-publish.yml -->
+            <!-- required, used in .github/workflows/sonatype-publish.old -->
             <id>sonatypeDeploy</id>
             <build>
                 <plugins>
